@@ -8,5 +8,6 @@ app.use(express.json())
 
 app.use('/api/users', require('./Controllers/userController'))
 app.use('/api/bookable', require('./Controllers/BookableController'))
+app.use('/api/Reservation', require('./Controllers/ReservationController'))
 
 module.exports = app;

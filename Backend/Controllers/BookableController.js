@@ -1,16 +1,16 @@
-const router =require('express').Router()
+const router = require("express").Router();
 
-const BookableModel = require('../Models/BookableModel')
+const BookableModel = require("../Models/BookableModel");
 
 //Create
-router.post('/', BookableModel.createNewBookable)
+router.post("/", BookableModel.createNewBookable);
 //Read
-router.get('/', BookableModel.getBookables)
+router.get("/", BookableModel.getBookables);
 
-router.get('/:id', BookableModel.getOneBookable)
+router.get("/:id", BookableModel.getOneBookable);
 //Update
-router.put('/:id', BookableModel.updateBookable)
+router.put("/:id", BookableModel.updateBookable);
 //Delete
-router.delete('/:id', BookableModel.deleteBookable)
+router.delete("/:id", BookableModel.deleteBookable);
 
 module.exports = router;

@@ -28,3 +28,30 @@ exports.getReservations = (req, res) => {
         })
      })
 }
+
+exports.getUserReservations = (req, res) => {
+    const {user_id} = req.params
+
+    if(!user_id){
+        return res.status(400).json({
+            message: 'User ID is required in the URL parameters.'
+        })
+    }
+
+    Reservation.find({ user_id: user_id})
+    .then((data) => {
+        if(data.length === 0){
+            return res.status(404).json({
+                message: 'No reservations found for the specified user'
+            })
+        }
+
+        res.status(200).json(data)
+    })
+    .catch((error) => {
+        console.error(error)
+        res.status(500).json({
+            message: 'Something went wrong when getting the user\'s reservations.'
+        })
+    })
+}

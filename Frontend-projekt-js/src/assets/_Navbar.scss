@@ -1,0 +1,26 @@
+.navbar {
+    display: flex;
+    padding: 1rem;
+    justify-content: space-between;
+    border-bottom: 1px hidden black;
+    box-shadow: 1px;
+  
+    .nav-part-one {
+      display: flex;
+      .navtitle {
+        margin: 0 1rem;
+      }
+      .navLink {
+        color: #000;
+      }
+    }
+    .nav-part-two {
+      display: flex;
+  
+      .navLink {
+        color: #000;
+        margin: 0 1rem;
+      }
+    }
+  }
+  

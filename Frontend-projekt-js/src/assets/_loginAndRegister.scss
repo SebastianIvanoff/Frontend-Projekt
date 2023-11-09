@@ -1,0 +1,46 @@
+.form-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  .form-group {
+    background-color: #d9d9d9;
+    padding: 5rem;
+    border-radius: 1rem;
+    width: 50rem;
+    .form-field {
+      margin-bottom: 1rem;
+      .form-label {
+        display: block;
+        margin-bottom: 1rem;
+      }
+      .form-control {
+        border: none;
+        width: 100%;
+        padding: 1rem;
+        background-color: #b8b8b8;
+        border-radius: 1rem;
+        box-shadow: 0 4px 2px -2px gray;
+      }
+      .form-control:focus {
+        outline: none;
+      }
+    }
+    .form-bottom{
+        display: flex;
+        justify-content: space-between;
+        .form-Link{
+            color: #333;
+        }
+        .form-btn{
+            box-shadow: 0 4px 2px -2px gray;
+            background-color: #4470B2;
+            color: #fff;
+            border: none;
+            padding: .5em 1em;
+            border-radius: .5em;
+        }
+    }
+  }
+}

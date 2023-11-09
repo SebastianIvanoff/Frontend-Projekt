@@ -1,20 +1,21 @@
-import { useState, useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { AuthContext } from "../context/AuthContext";
 import axios from "axios";
+import { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import BackButton from "../Components/BackButton";
+import { AuthContext } from "../context/AuthContext";
+import { Link } from "react-router-dom";
 
-const Login = () => {
+const Register = () => {
   const { updateToken } = useContext(AuthContext);
-  const [loginData, setLoginData] = useState({
+  const navigate = useNavigate();
+  const [registerData, setRegisterData] = useState({
     userName: "",
     password: "",
+    confirmPassword: "",
   });
 
-  const navigate = useNavigate();
-
   const handleChange = (e) => {
-    setLoginData((prevData) => {
+    setRegisterData((prevData) => {
       return {
         ...prevData,
         [e.target.name]: e.target.value,
@@ -26,8 +27,8 @@ const Login = () => {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "http://localhost:8080/api/users/login",
-        loginData,
+        "http://localhost:8080/api/users/register",
+        registerData,
         {
           headers: {
             "Content-Type": "application/json",
@@ -49,47 +50,57 @@ const Login = () => {
 
       <div className="form-wrapper">
         <div classname="form-title">
-          <h1>Logga in</h1>
+          <h1>Registrera</h1>
         </div>
 
         <form className="form-group" onSubmit={handleSubmit}>
           <div className="form-field">
             <label htmlFor="userName" className="form-label">
-              Email:
+              Email
             </label>
             <input
               type="text"
               id="userName"
               name="userName"
               className="form-control"
-              placeholder="Email..."
-              value={loginData.userName}
+              value={registerData.userName}
               onChange={handleChange}
             />
           </div>
           <div className="form-field">
             <label htmlFor="password" className="form-label">
-              Lösenord:
+              Password
             </label>
             <input
               type="password"
               id="password"
               name="password"
               className="form-control"
-              placeholder="Lösenord"
-              value={loginData.password}
+              value={registerData.password}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="form-field">
+            <label htmlFor="confirm-password" className="form-label">
+              Confirm Password
+            </label>
+            <input
+              type="password"
+              id="confirm-password"
+              name="confirmPassword"
+              className="form-control"
+              value={registerData.confirmPassword}
               onChange={handleChange}
             />
           </div>
           <div className="form-bottom">
-             <Link to={"/register"} className='form-Link'>Registrera dig</Link>
-          <button className="form-btn">Logga in</button>
+            <Link to={"/login"} className='form-Link'>Har du ett Konto? Logga in</Link>
+            <button className="form-btn">Registrera</button>
           </div>
-         
         </form>
       </div>
     </>
   );
 };
 
-export default Login;
+export default Register;

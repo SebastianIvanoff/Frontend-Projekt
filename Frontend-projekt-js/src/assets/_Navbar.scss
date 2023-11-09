@@ -9,17 +9,37 @@
       display: flex;
       .navtitle {
         margin: 0 1rem;
+        display: flex;
       }
       .navLink {
         color: #000;
+        display: flex;
+        cursor: pointer;
       }
     }
+    .nav-search{
+      border: 1px solid gray;
+      display: flex;
+      width: 30%;
+      border-radius: 1rem;
+      padding: .5rem;
+      input {
+        border: none;
+        width: 100%;
+      }
+      input:focus{
+        outline: none;
+      }
+
+    }
     .nav-part-two {
+      display: flex;
       display: flex;
   
       .navLink {
         color: #000;
         margin: 0 1rem;
+        display: flex;
       }
     }
   }

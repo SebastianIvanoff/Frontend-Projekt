@@ -7,6 +7,11 @@ const BookableSchema = new Schema({
   Img: { type: String },
   Description: { type: String, required: true },
   Price: { type: Number, required: true },
+  Category: {
+    type: String,
+    required: true,
+    enum: ["Bil", "MC"],
+  },
 });
 
 module.exports = mongoose.model("Bookable", BookableSchema);

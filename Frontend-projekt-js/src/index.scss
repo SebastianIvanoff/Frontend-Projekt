@@ -1,6 +1,8 @@
 @import "./assets/Navbar";
 @import "./assets/loginAndRegister";
 @import "./assets/BackButton";
+@import "./assets/MobileNav";
+@import "./assets/Footer";
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
 
@@ -11,6 +13,7 @@
   font-family: "Inter", sans-serif;
 }
 
-.container{
-  height: 100vh;
+.container {
+  min-height: calc(100vh - 50px); /* Adjust the height to leave space for the footer */
+  position: relative;
 }

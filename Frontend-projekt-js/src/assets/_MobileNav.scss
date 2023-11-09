@@ -1,0 +1,58 @@
+
+.mobile-nav{
+    .mobile-nav-top {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: .3rem 0;
+      .mobile-navtitle {
+        margin: 0 1rem;
+        display: flex;
+      }
+      .mobile-nav-search {
+        border: 1px solid gray;
+        display: flex;
+        width: 60%;
+        border-radius: 1rem;
+        padding: 0.5rem;
+        input {
+          border: none;
+          width: 100%;
+        }
+        input:focus {
+          outline: none;
+        }
+      }
+    }
+    .mobile-navlinks{
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        
+        .mobile-nav-car{
+            display: flex;
+            justify-content:space-around;
+            align-items: center;
+            background-color: #4470B2;
+            width: 100%;
+            color: #fff;
+            font-weight: lighter;
+        }
+        .mobile-nav-mc{
+            background-color: #E37575;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            color: #000;
+            font-weight: lighter;
+        }
+    }
+}
+
+
+@media screen and (min-width: 722px) {
+  .mobile-nav {
+    display: none;
+  }
+}

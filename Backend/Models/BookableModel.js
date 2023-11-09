@@ -1,15 +1,15 @@
 const Bookable = require("../Schemas/BookableSchema");
 
 exports.createNewBookable = (req, res) => {
-  const { Name, Address, Img, Description, Price } = req.body;
+  const { Name, Address, Img, Description, Price, Category } = req.body;
 
-  if (!Name || !Address || !Description || !Price) {
+  if (!Name || !Address || !Description || !Price || !Category) {
     res.status(400).json({
       message: "You need to fill in all fields!",
     });
   }
 
-  Bookable.create({ Name, Address, Img, Description, Price })
+  Bookable.create({ Name, Address, Img, Description, Price, Category })
     .then((data) => res.status(201).json(data))
     .catch(() =>
       res.status(500).json({

@@ -1,20 +1,24 @@
-import React from 'react'
-import { Outlet } from 'react-router-dom'
-import Footer from '../Components/footer'
-import MobileNav from '../Components/mobileNav'
-import Navbar from '../Components/Navbar'
+import React from "react";
+import { Outlet } from "react-router-dom";
+import Footer from "../Components/footer";
+import MobileNav from "../Components/mobileNav";
+import Navbar from "../Components/Navbar";
 
 const RootLayout = () => {
+  const [searchTerm, setSearchTerm] = React.useState("");
+
+  console.log("Search term:", searchTerm); // Add this line
+
   return (
     <>
-<Navbar />
-<MobileNav />
-<div className='container'>
-    <Outlet />
-</div>
-<Footer />
+      <Navbar setSearchTerm={setSearchTerm} />
+      <MobileNav />
+      <div className="container">
+        <Outlet />
+      </div>
+      <Footer />
     </>
-  )
-}
+  );
+};
 
-export default RootLayout
+export default RootLayout;

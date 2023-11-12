@@ -9,12 +9,15 @@
     padding: 5rem;
     border-radius: 1rem;
     width: 50rem;
+
     .form-field {
       margin-bottom: 1rem;
+
       .form-label {
         display: block;
         margin-bottom: 1rem;
       }
+
       .form-control {
         border: none;
         width: 100%;
@@ -23,24 +26,34 @@
         border-radius: 1rem;
         box-shadow: 0 4px 2px -2px gray;
       }
+
       .form-control:focus {
         outline: none;
       }
     }
-    .form-bottom{
-        display: flex;
-        justify-content: space-between;
-        .form-Link{
-            color: #333;
-        }
-        .form-btn{
-            box-shadow: 0 4px 2px -2px gray;
-            background-color: #4470B2;
-            color: #fff;
-            border: none;
-            padding: .5em 1em;
-            border-radius: .5em;
-        }
+
+    .form-bottom {
+      display: flex;
+      justify-content: space-between;
+
+      .form-Link {
+        color: #333;
+      }
+
+      .form-btn {
+        box-shadow: 0 4px 2px -2px gray;
+        background-color: #4470b2;
+        color: #fff;
+        border: none;
+        padding: 0.5em 1em;
+        border-radius: 0.5em;
+        cursor: pointer;
+      }
+    }
+
+    @media (max-width: 720px) {
+      padding: 2rem;
+      width: 100%; // Make it full width on smaller screens
     }
   }
 }

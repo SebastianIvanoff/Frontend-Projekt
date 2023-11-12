@@ -5,6 +5,7 @@ import Home from './Pages/Home'
 import Login from './Pages/Login'
 import { AuthProvider } from './context/AuthContext'
 import Register from './Pages/Register'
+import ListingDetails from './Pages/ListingDetails'
 
 const App = () => {
 
@@ -24,6 +25,10 @@ const App = () => {
         {
           path: 'register',
           element: <Register />
+        },
+        {
+          path: 'Bookable/:id',
+          element: <ListingDetails />
         },
       ]
     }

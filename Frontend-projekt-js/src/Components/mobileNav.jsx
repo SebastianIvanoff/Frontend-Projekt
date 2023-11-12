@@ -1,8 +1,7 @@
 import { BiCar } from "react-icons/bi";
-import { AiOutlineUser, AiOutlineSearch } from "react-icons/ai";
-import { NavLink, useLocation, useNavigate } from "react-router-dom";
-import { LuParkingSquare } from "react-icons/lu";
-import { RiDivideLine, RiMotorbikeLine } from "react-icons/ri";
+import { AiOutlineSearch } from "react-icons/ai";
+import { NavLink } from "react-router-dom";
+import { RiMotorbikeLine } from "react-icons/ri";
 
 const MobileNav = () => {
   return (
@@ -17,16 +16,7 @@ const MobileNav = () => {
           <input type="text" placeholder="Search" />
         </div>
       </div>
-      <div className="mobile-navlinks">
-        <NavLink to="/" className="mobile-nav-car">
-          <BiCar classname="mobile-pic-car" size={28} />
-          <span>Bil</span>
-        </NavLink>
-        <NavLink to="/" className="mobile-nav-mc">
-          <span>MC</span>
-          <RiMotorbikeLine classname="mobile-pic-mc" size={28} />
-        </NavLink>
-      </div>
+     
     </div>
   );
 };

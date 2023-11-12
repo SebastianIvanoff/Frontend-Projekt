@@ -1,0 +1,67 @@
+.bookables-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+  
+  .bookables {
+    position: relative;
+    margin: 1rem;
+    max-width: calc(33.33% - 2rem);
+    box-sizing: border-box;
+    display: flex;
+    border-radius: 0.5rem;
+  
+    .bookable-img {
+      display: block;
+      max-width: 250px;
+      max-height: 136px;
+      width: 100%;
+      position: relative; /* Make the image container relative */
+      border-radius: 0.5rem 0 0 0.5rem;
+    }
+  
+    .price-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      border-radius: 1rem;
+      background-color: #e37575; // adjust the background color and opacity
+      padding: 0.5rem;
+      color: #fff;
+    }
+  
+    .bookable-info {
+      display: flex;
+      flex-direction: column;
+      background-color: #d9d9d9;
+      align-items: center;
+  
+      .link-details {
+        text-decoration: none;
+        color: #fff;
+        cursor: pointer;
+        background-color: #e37575;
+        bottom: 0;
+        right: 0;
+        padding: 0 1rem;
+        border-radius: 0.5em;
+      }
+    }
+    @media (max-width: 720px) {
+        max-width: 100%; // Set the max-width to 100% for smaller screens
+      }
+  }
+  
+  /* Add styles for the "Bil" button */
+  .filter-car.selected-category {
+    background-color: #4470B2;
+    color: white;
+  }
+  
+  /* Add styles for the "MC" button */
+  .filter-mc.selected-category {
+    background-color: #e37575;
+    color: white;
+  }
+  

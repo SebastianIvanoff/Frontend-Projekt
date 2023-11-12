@@ -7,7 +7,7 @@ const BackButton = () => {
     <>
       <Link to={"/"} className="backButton">
         <MdKeyboardArrowLeft size={50} />
-        <p className="backlink">Tillbaka</p>
+        <span className="backlink">Tillbaka</span>
       </Link>
     </>
   );

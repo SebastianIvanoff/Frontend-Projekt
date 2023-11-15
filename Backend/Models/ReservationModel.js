@@ -2,15 +2,15 @@ const Reservation = require('../Schemas/ReservationSchema')
 
 
 exports.createReservation = (req, res) => {
-    const { bookable_id, user_id, startDate, endDate, totalPrice} = req.body
+    const { bookable, user, startDate, endDate, totalPrice} = req.body
 
-    if( !bookable_id || !user_id || !startDate || !endDate || !totalPrice )
+    if( !bookable || !user || !startDate || !endDate || !totalPrice )
 
     res.status(400).json({
         message: 'You need to fill in all fields!'
     })
 
-    Reservation.create({ bookable_id, user_id, startDate, endDate, totalPrice })
+    Reservation.create({ bookable, user, startDate, endDate, totalPrice })
     .then(data => res.status(201).json(data))
     .catch(() => res.status(500).json({
         message: 'Something went wrong when creating your Reservation!'

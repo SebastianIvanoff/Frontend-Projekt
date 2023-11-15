@@ -1,29 +1,29 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 const AuthContext = createContext();
 
-
 const AuthProvider = ({ children }) => {
-    
-  // Get the token from localStorage, if it exists
-    const localStorageObject = localStorage.getItem("token");
-    
-    // Parse the token from a string to an object
-    const initialToken = localStorageObject != "undefined" ? JSON.parse(localStorageObject) : null;
-   
-     // Initialize the token state with the initial token value
-    const [token, setToken] = useState(initialToken?.token || null);
-  
-    const updateToken = (newToken) => {
-      setToken(newToken);
-      localStorage.setItem("token", JSON.stringify(newToken));
-    };
-  
-    return (
-      <AuthContext.Provider value={{ token, updateToken }}>
-        {children}
-      </AuthContext.Provider>
-    );
+  // Get the token and user ID from localStorage
+  const localStorageToken = localStorage.getItem("token");
+
+  const initialToken = JSON.parse(localStorageToken);
+
+  const [token, setToken] = useState(initialToken || null);
+
+  const updateAuth = (newToken) => {
+    setToken(newToken);
+  };
+
+  // Save the token and user ID to localStorage whenever they change
+  useEffect(() => {
+    localStorage.setItem("token", JSON.stringify(token));
+  }, [token]);
+
+  return (
+    <AuthContext.Provider value={{ token, updateAuth }}>
+      {children}
+    </AuthContext.Provider>
+  );
 };
 
 export { AuthContext, AuthProvider };

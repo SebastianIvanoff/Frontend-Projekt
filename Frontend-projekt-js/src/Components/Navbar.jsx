@@ -8,6 +8,7 @@ import { AiOutlineUser, AiOutlineSearch } from "react-icons/ai";
 const Navbar = ({ setSearchTerm }) => {
   const { updateToken, token } = useContext(AuthContext);
   const location = useLocation();
+ 
 
   const handleLogout = () => {
     updateToken(null);
@@ -54,7 +55,7 @@ const Navbar = ({ setSearchTerm }) => {
       </form>
 
       <div className="nav-part-two">
-        <NavLink to={"#"} className="navLink">
+        <NavLink to={"/bookings"} className="navLink">
           <LuParkingSquare size={20} />
           Mina Parkeringar
         </NavLink>

@@ -36,6 +36,7 @@ const Login = () => {
       );
       const data = res.data;
       updateToken(data.token);
+      console.log(data)
       // Navigate to the home page
       navigate("/");
     } catch (error) {

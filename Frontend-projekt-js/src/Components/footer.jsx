@@ -9,6 +9,12 @@ import { AiOutlineUser, AiOutlineSearch } from "react-icons/ai";
 const Footer = () => {
   const { updateToken, token } = useContext(AuthContext);
 
+
+  const handleLogout = () => {
+    updateToken(null);
+  };
+
+
   return (
     <div className="footer">
       <div>

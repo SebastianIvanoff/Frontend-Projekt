@@ -66,7 +66,8 @@ exports.loginUser = (req, res) => {
         });
       }
 
-      res.status(200).json({ token: auth.generateToken(user) });
+      // Include the userId in the response
+      res.status(200).json({ token: auth.generateToken(user), userId: user._id });
     });
   });
 };

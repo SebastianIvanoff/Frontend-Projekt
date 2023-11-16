@@ -37,7 +37,7 @@ exports.getOneBookable = (req, res) => {
     })
     .catch(() => {
       res.status(500).json({
-        message: "Something went wron when getting this listing!",
+        message: "Something went wrong when getting this listing!",
       });
     });
 };

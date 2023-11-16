@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const auth = require('../Authentication/auth')
 
 const ReservationModel = require("../Models/ReservationModel");
 

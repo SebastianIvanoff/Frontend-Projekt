@@ -9,7 +9,7 @@ const ListingDetails = () => {
   const [bookableDetails, setBookableDetails] = useState(null);
   const { addToCart } = useCart();
   const navigate = useNavigate();
-  const { token } = useContext(AuthContext);
+  const { token, userId } = useContext(AuthContext);
   const [startDate, setStartDate] = useState(""); // Initialize with an empty string
   const [endDate, setEndDate] = useState(""); // Initialize with an empty string
 
@@ -33,29 +33,29 @@ const ListingDetails = () => {
   }
 
   const { Name, Address, Description, Price, Category } = bookableDetails;
-
+  
   const handleAddtoCart = () => {
     if (!token) {
       navigate("/login");
     } else {
-      // Calculate the number of days between startDate and endDate
       const start = new Date(startDate);
       const end = new Date(endDate);
-      const numberOfDays =
-        Math.floor((end - start) / (24 * 60 * 60 * 1000)) + 1;
-
+      const numberOfDays = Math.floor((end - start) / (24 * 60 * 60 * 1000)) + 1;
+      const pricePerDay = bookableDetails.Price * numberOfDays;
+      const totalPrice = pricePerDay;
       const reservationDetails = {
         startDate,
         endDate,
-        bookableId: id, // Use the id from useParams
+        bookableId: id,
         bookableDetails,
-        totalPrice: bookableDetails.Price * numberOfDays, // Calculate total price
+        totalPrice,
       };
 
-      addToCart(reservationDetails);
-      navigate("/checkout", { state: { startDate, endDate } });
+      
+      navigate("/checkout", { state: { reservationDetails } });
     }
   };
+  
 
   return (
     <div className="bookables-details-wrapper">

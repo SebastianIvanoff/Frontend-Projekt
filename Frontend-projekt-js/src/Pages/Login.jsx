@@ -5,7 +5,7 @@ import axios from "axios";
 import BackButton from "../Components/BackButton";
 
 const Login = () => {
-  const { updateToken } = useContext(AuthContext);
+  const { updateAuth } = useContext(AuthContext);
   const [loginData, setLoginData] = useState({
     userName: "",
     password: "",
@@ -35,8 +35,10 @@ const Login = () => {
         }
       );
       const data = res.data;
-      updateToken(data.token);
-      console.log(data)
+
+      // Update both token and userId in AuthContext
+      updateAuth(data.token, data.userId);
+        
       // Navigate to the home page
       navigate("/");
     } catch (error) {
@@ -44,12 +46,13 @@ const Login = () => {
     }
   };
 
+
   return (
     <>
       <BackButton />
 
       <div className="form-wrapper">
-        <div classname="form-title">
+        <div className="form-title">
           <h1>Logga in</h1>
         </div>
 

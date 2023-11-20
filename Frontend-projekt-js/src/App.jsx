@@ -9,6 +9,8 @@ import ListingDetails from "./Pages/ListingDetails";
 import Bookings from "./Pages/Bookings";
 import { CartProvider } from "./context/CartContext";
 import Checkout from "./Pages/Checkout";
+import Payment from "./Pages/payment";
+
 
 const App = () => {
   const router = createBrowserRouter([
@@ -39,6 +41,10 @@ const App = () => {
         {
           path: "checkout",
           element: <Checkout />,
+        },
+        {
+          path: "pay",
+          element: <Payment />,
         },
       ],
     },

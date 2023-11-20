@@ -1,9 +1,19 @@
-import React from 'react'
+import React from "react";
+import BackButton from "../Components/BackButton";
+import { Link } from "react-router-dom";
 
-const payment = () => {
+const Payment = () => {
   return (
-    <div>payment</div>
-  )
-}
+    <div className="payment-container">
+      <BackButton />
+      <div className="payment-info">
+           <p>Betalning sker....</p>
+      <p>Vänligen vänta</p>
+      <Link to={"/bookings"} className="payment-link">Gå vidare (mina parkeringar)</Link>
+      </div>
+   
+    </div>
+  );
+};
 
-export default payment
+export default Payment;

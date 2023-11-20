@@ -38,7 +38,7 @@ const Login = () => {
 
       // Update both token and userId in AuthContext
       updateAuth(data.token, data.userId);
-        
+        console.log(data.token)
       // Navigate to the home page
       navigate("/");
     } catch (error) {

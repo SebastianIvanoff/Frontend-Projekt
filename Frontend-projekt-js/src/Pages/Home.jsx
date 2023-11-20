@@ -53,8 +53,8 @@ const Home = ({ setSearchTerm }) => {
             </div>
 
             <div className="bookable-info">
-              <p>Kategori: {bookable.Category}</p>
-              <p>{bookable.Description}</p>
+              <p className='link-info'>Kategori: {bookable.Category}</p>
+              <p className='link-info'>{bookable.Description}</p>
               <Link to={`/bookable/${bookable._id}`} className="link-details">
                 <span>Reservera</span>
               </Link>

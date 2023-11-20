@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { useCart } from "../context/CartContext";
 import { AuthContext } from "../context/AuthContext";
+import BackButton from "../Components/BackButton";
 
 const ListingDetails = () => {
   const { id } = useParams();
@@ -58,7 +59,22 @@ const ListingDetails = () => {
   
 
   return (
+    <>
+    <BackButton />
     <div className="bookables-details-wrapper">
+    <div className="image-container">
+    <img
+      src={bookableDetails.Img}
+      alt={bookableDetails.Name}
+      style={{ maxWidth: "100%" }}
+      className="listing-img"
+    />
+    <div className="image-text">
+      <p>{Price}/ dygn</p>
+    </div>
+  </div>
+  <div className="listing-info">
+        <div className="listing-dates">
       <input
         type="date"
         value={startDate}
@@ -69,18 +85,25 @@ const ListingDetails = () => {
         value={endDate}
         onChange={(e) => setEndDate(e.target.value)}
       />
-      <h2>{Name}</h2>
-      <p>Address: {Address}</p>
-      <p>Description: {Description}</p>
-      <p>Price: {Price}</p>
-      <p>Category: {Category}</p>
-      <img
-        src={bookableDetails.Img}
-        alt={bookableDetails.Name}
-        style={{ maxWidth: "100%" }}
-      />
-      <button onClick={handleAddtoCart}>Reservera</button>
+        </div>
+      <div className="listing-user">
+           <h2>{Name}</h2>
+      </div>
+   
+      
+      <div className="listing-general-info">
+      <p>Address: </p>
+      <p className="listing-specific-info">{Address}</p>
+      <p>Description: </p>
+      <p className="listing-specific-info">{Description}</p>
+      <p>Price: </p>
+      <p className="listing-specific-info">{Price} / dygn</p>
+     
+      <button onClick={handleAddtoCart} className="listing-btn">Reservera</button>
+      </div>
+      </div>
     </div>
+    </>
   );
 };
 

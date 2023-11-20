@@ -6,7 +6,7 @@ import { AuthContext } from "../context/AuthContext";
 import { Link } from "react-router-dom";
 
 const Register = () => {
-  const { updateToken } = useContext(AuthContext);
+  const { updateAuth } = useContext(AuthContext);
   const navigate = useNavigate();
   const [registerData, setRegisterData] = useState({
     userName: "",
@@ -36,7 +36,8 @@ const Register = () => {
         }
       );
       const data = res.data;
-      updateToken(data.token);
+      updateAuth(data.token);
+      console.log(data.token)
       // Navigate to the home page
       navigate("/");
     } catch (error) {
@@ -49,7 +50,7 @@ const Register = () => {
       <BackButton />
 
       <div className="form-wrapper">
-        <div classname="form-title">
+        <div className="form-title">
           <h1>Registrera</h1>
         </div>
 

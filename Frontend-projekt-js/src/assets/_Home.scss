@@ -36,7 +36,8 @@
       flex-direction: column;
       background-color: #d9d9d9;
       align-items: center;
-  
+      border-radius: 0 0.5rem  0.5rem  0;
+
       .link-details {
         text-decoration: none;
         color: #fff;
@@ -46,6 +47,8 @@
         right: 0;
         padding: 0 1rem;
         border-radius: 0.5em;
+        height: 100;
+      
       }
     }
     @media (max-width: 720px) {

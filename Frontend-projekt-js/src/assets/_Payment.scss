@@ -1,0 +1,22 @@
+.payment-container{
+    background-color: #8E8E8E;
+    height: 100vh;
+    .payment-info{
+        height: 100%;
+        display: grid;
+        place-content: center;
+
+        p{
+            color: #39E455;
+            font-size: larger;
+        }
+        .payment-link{
+            background-color: #39E455;
+            color: #fff;
+            padding: 1rem;
+            text-decoration: none;
+            border-radius: 1rem;
+            margin-top: 3rem;
+        }
+    }
+}

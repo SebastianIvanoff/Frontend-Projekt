@@ -5,6 +5,10 @@
 @import "./assets/Footer";
 @import "./assets/Filter";
 @import "./assets/Home";
+@import "./assets/listingDetails";
+@import "./assets/Checkout";
+@import "./assets/bookings";
+@import "./assets/Payment";
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
 
@@ -18,4 +22,5 @@
 .container {
   min-height: calc(100vh - 50px); /* Adjust the height to leave space for the footer */
   position: relative;
+  width: 100%;
 }

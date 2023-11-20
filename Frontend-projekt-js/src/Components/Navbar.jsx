@@ -6,12 +6,11 @@ import { LuParkingSquare } from "react-icons/lu";
 import { AiOutlineUser, AiOutlineSearch } from "react-icons/ai";
 
 const Navbar = ({ setSearchTerm }) => {
-  const { updateToken, token } = useContext(AuthContext);
+  const { logout, token } = useContext(AuthContext);
   const location = useLocation();
- 
 
   const handleLogout = () => {
-    updateToken(null);
+    logout();
   };
 
   const handleClick = (e, to) => {
@@ -27,9 +26,9 @@ const Navbar = ({ setSearchTerm }) => {
   const handleSearchSubmit = (e) => {
     e.preventDefault();
     setSearchTerm((prevSearchTerm) => prevSearchTerm); // Using the previous value of searchTerm
-    console.log('Search term before update:', searchTerm);
+    console.log("Search term before update:", searchTerm);
   };
-  
+
   return (
     <div className="navbar">
       <div className="nav-part-one">

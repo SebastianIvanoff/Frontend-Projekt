@@ -1,0 +1,83 @@
+.checkout-wrapper {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+ 
+
+  .checkout-status {
+    display: flex;
+    justify-content: space-between; // Add space between dots and lines
+    align-items: center; // Align vertically in the center
+    margin: 0 1rem; // Adjust margin for better spacing
+  
+    .dot-blue {
+      height: 25px;
+      width: 25px;
+      background-color: #4470b2;
+      border-radius: 50%;
+      display: inline-block;
+      margin:  1rem 5rem;
+    }
+    .dot {
+      height: 25px;
+      width: 25px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      margin:  1rem 5rem;
+    }
+
+    hr {
+        flex-grow: 1; /* Take up remaining space in the flex container */
+        height: 1px; /* Set the height of the line */
+        background-color: #888; /* Set the color of the line */
+        margin: 0 0.5rem; /* Adjust margin for better spacing */
+      }
+  }
+
+  .checkout-info {
+    background-color: #d9d9d9;
+    border-radius: 1rem;
+
+    .img-container {
+      position: relative;
+      .checkout-img {
+        max-width: 100%;
+      }
+
+      .img-text {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        transform: translate(-50%, -50%);
+        color: #fff;
+        font-size: 1rem;
+        background-color: #4470b2;
+        padding: 0.5em;
+        border-radius: 1rem;
+      }
+    }
+
+    .checkout-info {
+      padding: 0.5em;
+      display: flex;
+      justify-content: space-between;
+      .checkout-dates {
+        display: flex;
+      }
+    }
+  }
+
+  .checkout-btn {
+    background-color: #2e9438;
+    color: #fff;
+    border: none;
+    padding: 1rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    margin-top: 1rem;
+  }
+}

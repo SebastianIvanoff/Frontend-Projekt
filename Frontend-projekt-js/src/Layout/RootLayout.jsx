@@ -7,7 +7,7 @@ import Navbar from "../Components/Navbar";
 const RootLayout = () => {
   const [searchTerm, setSearchTerm] = React.useState("");
 
-  console.log("Search term:", searchTerm); // Add this line
+  console.log("Search term:", searchTerm); 
 
   return (
     <>

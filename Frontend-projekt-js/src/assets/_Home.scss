@@ -17,7 +17,7 @@
       max-width: 250px;
       max-height: 136px;
       width: 100%;
-      position: relative; /* Make the image container relative */
+      position: relative; 
       border-radius: 0.5rem 0 0 0.5rem;
     }
   
@@ -26,7 +26,7 @@
       bottom: 0;
       left: 0;
       border-radius: 1rem;
-      background-color: #e37575; // adjust the background color and opacity
+      background-color: #e37575;
       padding: 0.5rem;
       color: #fff;
     }
@@ -52,17 +52,17 @@
       }
     }
     @media (max-width: 720px) {
-        max-width: 100%; // Set the max-width to 100% for smaller screens
+        max-width: 100%; 
       }
   }
   
-  /* Add styles for the "Bil" button */
+
   .filter-car.selected-category {
     background-color: #4470B2;
     color: white;
   }
   
-  /* Add styles for the "MC" button */
+
   .filter-mc.selected-category {
     background-color: #e37575;
     color: white;

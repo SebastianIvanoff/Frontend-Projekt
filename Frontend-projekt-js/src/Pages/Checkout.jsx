@@ -43,13 +43,12 @@ const Checkout = () => {
         }
       );
 
-      // Assuming the reservation is successfully created, you can redirect the user
-      // or perform other actions as needed.
+      
       console.log("Reservation created:", response.data);
-      navigate("/pay"); // Redirect to a success page or another route
+      navigate("/pay");
     } catch (error) {
       console.error("Error creating reservation:", error);
-      // Handle error, show a message to the user, etc.
+      
     }
   };
 

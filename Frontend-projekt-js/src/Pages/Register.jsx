@@ -36,7 +36,7 @@ const Register = () => {
         }
       );
       const data = res.data;
-      updateAuth(data.token);
+      updateAuth(data.token, data.userId);
       console.log(data.token)
       // Navigate to the home page
       navigate("/");

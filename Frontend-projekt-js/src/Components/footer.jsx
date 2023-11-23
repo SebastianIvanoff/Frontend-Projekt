@@ -24,7 +24,7 @@ const Footer = () => {
         </NavLink>
       </div>
 
-      <NavLink to={"#"} className="Footer-link">
+      <NavLink to={"/bookings"} className="Footer-link">
         <LuParkingSquare size={20} />
         Mina Parkeringar
       </NavLink>
